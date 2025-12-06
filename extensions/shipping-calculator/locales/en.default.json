@@ -1,0 +1,14 @@
+{
+  "shipping_calculator": {
+    "title": "Estimate Delivery",
+    "country_label": "Country/Region",
+    "province_label": "County/Region",
+    "zip_label": "Postcode",
+    "city_label": "Town/City (optional)",
+    "button_text": "Calculate Delivery",
+    "results_title": "Available Delivery Options:",
+    "loading_text": "Calculating delivery rates...",
+    "error_empty_cart": "Your basket is empty",
+    "error_no_rates": "No delivery options available for this address"
+  }
+}
