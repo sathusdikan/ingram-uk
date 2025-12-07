@@ -1,0 +1,19 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "069f8d23ccaf4a3c11c917a5e0dd8368"
+name = "ingram-micro"
+application_url = "https://ingram-mirco-zeta.vercel.app"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_all_cart_transforms,read_cart_transforms,read_delivery_customizations,read_fulfillment_constraint_rules,read_inventory_shipments,read_metaobject_definitions,read_metaobjects,read_order_edits,read_orders,read_product_feeds,read_product_listings,read_products,read_shipping,read_third_party_fulfillment_orders,write_cart_transforms,write_delivery_customizations,write_fulfillment_constraint_rules,write_inventory_shipments,write_metaobject_definitions,write_metaobjects,write_order_edits,write_orders,write_product_feeds,write_product_listings,write_products,write_shipping,write_third_party_fulfillment_orders"
+
+[auth]
+redirect_urls = [ "https://ingram-mirco-zeta.vercel.app/auth/callback" ]
