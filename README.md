@@ -74,7 +74,7 @@ The app uses these Prisma models (PostgreSQL via Supabase):
 | Model | Purpose |
 |-------|---------|
 | `Session` | Shopify OAuth sessions |
-| `IngramCredential` | Ingram API credentials per shop |
+| `ingramCredential_UK` | Ingram API credentials per shop |
 | `ProductMapping` | SKU → Ingram part number cache |
 | `ProductSyncJob` | Sync job status tracking |
 | `CarrierConfiguration` | Enabled/disabled carriers per shop |
