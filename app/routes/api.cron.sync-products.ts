@@ -38,7 +38,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   try {
     // Get all shops with Ingram credentials
-    const shops = await prisma.ingramCredential.findMany({
+    const shops = await prisma.ingramCredential_UK.findMany({
       select: { shopDomain: true },
     });
 
