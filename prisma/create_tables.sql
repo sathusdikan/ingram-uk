@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS "Session" (
     CONSTRAINT "Session_pkey" PRIMARY KEY ("id")
 );
 
--- Create IngramCredential table for Ingram Micro API credentials
-CREATE TABLE IF NOT EXISTS "IngramCredential" (
+-- Create ingramCredential_UK table for Ingram Micro API credentials
+CREATE TABLE IF NOT EXISTS "ingramCredential_UK" (
     "shopDomain" TEXT NOT NULL,
     "clientId" TEXT NOT NULL,
     "clientSecret" TEXT NOT NULL,
@@ -36,5 +36,5 @@ CREATE TABLE IF NOT EXISTS "IngramCredential" (
     "lastValidationStatus" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
-    CONSTRAINT "IngramCredential_pkey" PRIMARY KEY ("shopDomain")
+    CONSTRAINT "ingramCredential_UK_pkey" PRIMARY KEY ("shopDomain")
 );
