@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
-import type { IngramCredential } from "@prisma/client";
+import type { ingramCredential_UK } from "@prisma/client";
+
 import { z } from "zod";
 import prisma from "../db.server";
 import { createTtlCache } from "../utils/ttl-cache.server";
@@ -33,7 +34,7 @@ export const credentialSchema = z.object({
   clientId: z.string().min(1),
   clientSecret: z.string().min(1),
   customerNumber: z.string().min(1),
-  countryCode: z.string().min(2).max(2).default("GB"),
+  countryCode: z.string().min(2).max(2).default("US"),
   contactEmail: z.string().email(),
   senderId: z.string().optional(),
   billToAddressId: z.string().optional(),
@@ -116,7 +117,7 @@ export class IngramError extends Error {
 }
 
 export async function getCredentials(shopDomain: string) {
-  return prisma.ingramCredential.findUnique({
+  return prisma.ingramCredential_UK.findUnique({
     where: { shopDomain },
   });
 }
@@ -131,7 +132,7 @@ export async function saveCredentials(shopDomain: string, data: CredentialInput)
           String(data.sandbox) === "1"
         : true;
   const normalizedCountry = data.countryCode.toUpperCase();
-  const record = await prisma.ingramCredential.upsert({
+  const record = await prisma.ingramCredential_UK.upsert({
     where: { shopDomain },
     create: {
       shopDomain,
@@ -168,7 +169,7 @@ export async function testCredentials(shopDomain: string) {
     forceRefresh: true,
   });
 
-  await prisma.ingramCredential.update({
+  await prisma.ingramCredential_UK.update({
     where: { shopDomain },
     data: {
       lastValidatedAt: new Date(),
@@ -189,7 +190,7 @@ export async function requestFreightEstimate(
   shopDomain: string,
   payload: RateTestInput,
   opts?: {
-    credentials?: IngramCredential;
+    credentials?: ingramCredential_UK;
     accessToken?: string;
   },
 ) {
@@ -288,7 +289,7 @@ export async function requestFreightEstimate(
 }
 
 async function ensureAccessToken(
-  credentials: IngramCredential,
+  credentials: ingramCredential_UK,
   { forceRefresh = false }: { forceRefresh?: boolean } = {},
 ) {
   if (
@@ -317,7 +318,7 @@ async function ensureAccessToken(
   const json = await response.json().catch(() => ({}));
 
   if (!response.ok) {
-    await prisma.ingramCredential.update({
+    await prisma.ingramCredential_UK.update({
       where: { shopDomain: credentials.shopDomain },
       data: {
         lastValidatedAt: new Date(),
@@ -342,7 +343,7 @@ async function ensureAccessToken(
 
   const expiresAt = new Date(Date.now() + expiresIn * 1000);
 
-  await prisma.ingramCredential.update({
+  await prisma.ingramCredential_UK.update({
     where: { shopDomain: credentials.shopDomain },
     data: {
       accessToken,
