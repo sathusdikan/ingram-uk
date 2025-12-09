@@ -32,7 +32,7 @@ model Session {
   emailVerified Boolean?  @default(false)
 }
 
-model IngramCredential {
+model ingramCredential_UK {
   shopDomain            String   @id
   clientId              String
   clientSecret          String
