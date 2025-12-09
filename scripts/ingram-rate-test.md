@@ -31,8 +31,8 @@ echo "Token: $TOKEN"
 curl -s -X POST https://api.ingrammicro.com:443/resellers/v6/freightestimate \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
-  -H "IM-CustomerNumber:20-030134" \
-  -H "IM-CountryCode: UK" \
+  -H "IM-CustomerNumber: 50-979132" \
+  -H "IM-CountryCode: US" \
   -H "IM-CorrelationID: cli-test-$(date +%s)" \
   -H "IM-CustomerContact: sathuapple9@gmail.com" \
   -d '{
@@ -45,7 +45,7 @@ curl -s -X POST https://api.ingrammicro.com:443/resellers/v6/freightestimate \
       "city": "LENEXA",
       "state": "KS",
       "postalCode": "662191736",
-      "countryCode": "UK"
+      "countryCode": "US"
     },
     "lines": [
       {
@@ -68,8 +68,8 @@ Replace `00FL60` with the Ingram part number from Step 1.
 curl -s -X POST https://api.ingrammicro.com:443/resellers/v6/freightestimate \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
-  -H "IM-CustomerNumber: 20-030134" \
-  -H "IM-CountryCode: UK" \
+  -H "IM-CustomerNumber: 50-979132" \
+  -H "IM-CountryCode: US" \
   -H "IM-CorrelationID: cli-test-multi-$(date +%s)" \
   -H "IM-CustomerContact: sathuapple9@gmail.com" \
   -d '{
@@ -82,7 +82,7 @@ curl -s -X POST https://api.ingrammicro.com:443/resellers/v6/freightestimate \
       "city": "LENEXA",
       "state": "KS",
       "postalCode": "662191736",
-      "countryCode": "UK"
+      "countryCode": "US"
     },
     "lines": [
       {"customerLineNumber": "001", "ingramPartNumber": "001346", "quantity": "1", "carrierCode": ""},
