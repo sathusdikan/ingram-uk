@@ -10,7 +10,7 @@
     <div class="ingram-shipping-calculator__field">
       <label for="ingram-country">{{ block.settings.country_label }}</label>
       <select id="ingram-country" name="country" required>
-        <option value="UK" selected>United Kingdom</option>
+        <option value="GB" selected>United Kingdom</option>
       </select>
     </div>
 
@@ -135,7 +135,7 @@
       if(!isValidUKPostcode(postcode)) throw new Error('Please enter a valid UK postcode');
 
       const address = {
-        country: 'UK',
+        country: 'GB',
         city: document.getElementById('ingram-city').value,
         zip: postcode
       };
