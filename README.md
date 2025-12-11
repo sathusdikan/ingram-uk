@@ -53,8 +53,9 @@ DATABASE_URL="postgres://postgres:password@db.xxx.supabase.co:6543/postgres?pgbo
 DIRECT_URL="postgresql://postgres:password@db.xxx.supabase.co:5432/postgres"
 
 # Supabase (for SKU mapping source)
-SUPABASE_URL=https://xxx.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+SUPABASE_URL=https://fjpdegogqyjncmkevzhn.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqcGRlZ29ncXlqbmNta2V2emhuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0ODcwMzA3NSwiZXhwIjoyMDY0Mjc5MDc1fQ.edZl15zmTya73Fv9l78LYp4jdoTkLdQUKHiAIgM6vzs
+ 
 
 # Optional
 APP_BACKEND_TOKEN=optional-shared-secret-for-api-calls
