@@ -45,7 +45,7 @@ Create a `.env` file with the following:
 # Shopify App
 SHOPIFY_API_KEY=your_api_key
 SHOPIFY_API_SECRET=your_api_secret
-SHOPIFY_APP_URL=https://your-app.vercel.app
+SHOPIFY_APP_URL=https://ingram-uk.vercel.app
 SCOPES=write_shipping,read_shipping,read_products,write_products,...
 
 # Database (Supabase PostgreSQL)
