@@ -22,18 +22,18 @@ When creating a new app, you need to change:
 # CHANGE THESE:
 client_id = "YOUR_NEW_CLIENT_ID"           # From Shopify Partner Dashboard
 name = "your-new-app-name"                  # Your app name
-application_url = "https://your-new-app.vercel.app"  # Your deployment URL
+application_url = "https://ingram-uk.vercel.app"  # Your deployment URL
 
 # CHANGE THIS:
 [auth]
-redirect_urls = [ "https://your-new-app.vercel.app/auth/callback" ]
+redirect_urls = [ "https://https://ingram-uk.vercel.app/auth/callback" ]
 ```
 
 #### `shopify.app.ingram-micro.toml` (if exists)
 ```toml
 # CHANGE THESE:
 client_id = "YOUR_NEW_CLIENT_ID"
-application_url = "https://your-new-app.vercel.app"
+application_url = "https://ingram-uk.vercel.app"
 ```
 
 ---
@@ -46,7 +46,7 @@ Create a new `.env` file with:
 # Shopify App Credentials (MUST CHANGE)
 SHOPIFY_API_KEY=your_new_api_key
 SHOPIFY_API_SECRET=your_new_api_secret
-SHOPIFY_APP_URL=https://your-new-app.vercel.app
+SHOPIFY_APP_URL=https://ingram-uk.vercel.app
 
 # Scopes (may need to adjust based on your needs)
 SCOPES=write_shipping,read_shipping,read_products,write_products,...
@@ -75,8 +75,8 @@ CRON_SECRET=your-cron-secret
 #### `package.json`
 ```json
 {
-  "name": "your-new-app-name",  // CHANGE THIS
-  "author": "your-name"          // CHANGE THIS (optional)
+  "name": "ingram_micro_uk",  // CHANGE THIS
+  "author": "B.sathusdikan"          // CHANGE THIS (optional)
 }
 ```
 
