@@ -559,7 +559,7 @@ model IngramCredential {
   lastValidatedAt      DateTime?
   lastValidationStatus String?
   createdAt            DateTime  @default(now())
-  updatedAt            DateTime
+  updatedAt            DateTime  @default(now())
 
   @@schema("public")
 }
@@ -570,7 +570,7 @@ model IngramCredential_UK {
   clientId             String
   clientSecret         String
   customerNumber       String
-  countryCode          String    @default("US")
+  countryCode          String    @default("GB")
   contactEmail         String?
   senderId             String?
   billToAddressId      String?
@@ -581,10 +581,11 @@ model IngramCredential_UK {
   lastValidatedAt      DateTime?
   lastValidationStatus String?
   createdAt            DateTime  @default(now())
-  updatedAt            DateTime
+  updatedAt            DateTime  @updatedAt   // ✅ Add this line
 
   @@schema("public")
 }
+
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model ProductMapping_UK {
