@@ -73,13 +73,13 @@ The app uses these Prisma models (PostgreSQL via Supabase):
 
 | Model | Purpose |
 |-------|---------|
-| `Session` | Shopify OAuth sessions |
+| `Session_UK` | Shopify OAuth sessions |
 | `ingramCredential_UK` | Ingram API credentials per shop |
-| `ProductMapping` | SKU → Ingram part number cache |
-| `ProductSyncJob` | Sync job status tracking |
-| `CarrierConfiguration` | Enabled/disabled carriers per shop |
-| `RateRequestLog` | Rate request history for debugging |
-| `FallbackRateSettings` | Custom fallback rate configuration |
+| `ProductMapping_UK` | SKU → Ingram part number cache |
+| `ProductSyncJob_UK` | Sync job status tracking |
+| `CarrierConfiguration_UK` | Enabled/disabled carriers per shop |
+| `RateRequestLog_UK` | Rate request history for debugging |
+| `FallbackRateSettings_UK` | Custom fallback rate configuration |
 
 ## Setup & Installation
 
