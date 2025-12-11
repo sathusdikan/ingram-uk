@@ -25,7 +25,7 @@ CREATE TABLE "ingramCredential_UK" (
     "clientId" TEXT NOT NULL,
     "clientSecret" TEXT NOT NULL,
     "customerNumber" TEXT NOT NULL,
-    "countryCode" TEXT NOT NULL DEFAULT 'US',
+    "countryCode" TEXT NOT NULL DEFAULT 'GB',
     "contactEmail" TEXT,
     "senderId" TEXT,
     "billToAddressId" TEXT,
@@ -155,4 +155,5 @@ CREATE INDEX "ProductSyncJob_status_idx" ON "ProductSyncJob"("status");
 
 -- CreateIndex
 CREATE INDEX "ProductSyncJob_createdAt_idx" ON "ProductSyncJob"("createdAt");
+
 
