@@ -90,7 +90,7 @@
   if (!container) return;
 
   const shop = container.dataset.shop;
-  const apiUrl = container.dataset.apiUrl || 'https://ingram-mirco.vercel.app/api/cart-estimate';
+  const apiUrl = container.dataset.apiUrl || 'https://ingram-uk.vercel.app/api/cart-estimate';
 
   const form = document.getElementById('ingram-shipping-form');
   const resultsContainer = document.getElementById('ingram-shipping-results');
@@ -179,7 +179,7 @@
   "target": "section",
   "settings": [
     { "type": "text", "id": "title", "label": "Title", "default": "Estimate Shipping" },
-    { "type": "text", "id": "api_url", "label": "API URL", "default": "https://ingram-mirco.vercel.app/api/cart-estimate" },
+    { "type": "text", "id": "api_url", "label": "API URL", "default": "https://ingram-uk.vercel.app/api/cart-estimate" },
     { "type": "text", "id": "country_label", "label": "Country Label", "default": "Country" },
     { "type": "text", "id": "province_label", "label": "Region Label", "default": "Region (optional)" },
     { "type": "text", "id": "zip_label", "label": "Postcode Label", "default": "Postcode" },
