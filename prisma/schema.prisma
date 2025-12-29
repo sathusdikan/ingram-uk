@@ -79,14 +79,15 @@ model ProductMapping {
   shopDomain       String
   sku              String
   ingramPartNumber String
+  country          String   // "US" | "GB"
   createdAt        DateTime @default(now())
   updatedAt        DateTime @default(now()) @updatedAt
 
-  @@unique([shopDomain, sku])
-  @@index([shopDomain])
+  @@unique([shopDomain, sku, country], map: "productmapping_shop_sku_country_uniq")
+  @@index([shopDomain], map: "productmapping_shop_idx")
+  @@index([country], map: "productmapping_country_idx")
   @@schema("public")
- @@map("ProductMapping_UK")
- 
+  @@map("product_mapping")
 }
 
 model ProductSyncJob {
