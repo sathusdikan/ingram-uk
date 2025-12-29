@@ -85,7 +85,7 @@ model ProductMapping {
   @@unique([shopDomain, sku])
   @@index([shopDomain])
   @@schema("public")
-
+ @@map("ProductMapping_UK")
  
 }
 
