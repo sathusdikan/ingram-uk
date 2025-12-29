@@ -18,7 +18,7 @@ const skuCache = createTtlCache<string, IngramSkuMapping | null>({
 
 export async function getIngramMappingsForSkus(
   shopDomain: string,
-  skus: string[],
+    skus: string[],
   opts: { allowSupabaseFallback?: boolean } = {},
 ) {
   if (skus.length === 0) {
@@ -95,7 +95,7 @@ export async function getIngramMappingsForSkus(
 
   const supabase = getSupabaseClient();
   const { data, error } = await supabase
-    .from("merged_inventory_price_today")
+    .from("merged_inventory_price_im_uk")
     .select("price_vendor_part,ingram_part_number")
     .in("price_vendor_part", missingSkus);
 
