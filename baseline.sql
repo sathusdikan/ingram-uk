@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "Session" (
+CREATE TABLE "Session_UK" (
     "id" TEXT NOT NULL,
     "shop" TEXT NOT NULL,
     "state" TEXT NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE "ingramCredential_UK" (
     "clientId" TEXT NOT NULL,
     "clientSecret" TEXT NOT NULL,
     "customerNumber" TEXT NOT NULL,
-    "countryCode" TEXT NOT NULL DEFAULT 'GB',
+    "countryCode" TEXT NOT NULL DEFAULT 'US',
     "contactEmail" TEXT,
     "senderId" TEXT,
     "billToAddressId" TEXT,
@@ -42,7 +42,7 @@ CREATE TABLE "ingramCredential_UK" (
 );
 
 -- CreateTable
-CREATE TABLE "CarrierConfiguration" (
+CREATE TABLE "CarrierConfiguration_UK" (
     "id" TEXT NOT NULL,
     "shopDomain" TEXT NOT NULL,
     "carrierCode" TEXT NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE "CarrierConfiguration" (
 );
 
 -- CreateTable
-CREATE TABLE "RateRequestLog" (
+CREATE TABLE "RateRequestLog_UK" (
     "id" TEXT NOT NULL,
     "shopDomain" TEXT NOT NULL,
     "correlationId" TEXT NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE "RateRequestLog" (
 );
 
 -- CreateTable
-CREATE TABLE "ProductMapping" (
+CREATE TABLE "ProductMapping_UK" (
     "id" TEXT NOT NULL,
     "shopDomain" TEXT NOT NULL,
     "sku" TEXT NOT NULL,
@@ -96,7 +96,7 @@ CREATE TABLE "ProductMapping" (
 );
 
 -- CreateTable
-CREATE TABLE "ProductSyncJob" (
+CREATE TABLE "ProductSyncJob_UK" (
     "id" TEXT NOT NULL,
     "shopDomain" TEXT NOT NULL,
     "status" TEXT NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE "ProductSyncJob" (
 );
 
 -- CreateTable
-CREATE TABLE "FallbackRateSettings" (
+CREATE TABLE "FallbackRateSettings_UK" (
     "shopDomain" TEXT NOT NULL,
     "enabled" BOOLEAN NOT NULL DEFAULT true,
     "price" DOUBLE PRECISION NOT NULL DEFAULT 999.00,
@@ -124,36 +124,34 @@ CREATE TABLE "FallbackRateSettings" (
 );
 
 -- CreateIndex
-CREATE INDEX "CarrierConfiguration_shopDomain_idx" ON "CarrierConfiguration"("shopDomain");
+CREATE INDEX "CarrierConfiguration_shopDomain_idx" ON "CarrierConfiguration_UK"("shopDomain");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "CarrierConfiguration_shopDomain_carrierCode_key" ON "CarrierConfiguration"("shopDomain", "carrierCode");
+CREATE UNIQUE INDEX "CarrierConfiguration_shopDomain_carrierCode_key" ON "CarrierConfiguration_UK"("shopDomain", "carrierCode");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "RateRequestLog_correlationId_key" ON "RateRequestLog"("correlationId");
+CREATE UNIQUE INDEX "RateRequestLog_correlationId_key" ON "RateRequestLog_UK"("correlationId");
 
 -- CreateIndex
-CREATE INDEX "RateRequestLog_shopDomain_idx" ON "RateRequestLog"("shopDomain");
+CREATE INDEX "RateRequestLog_shopDomain_idx" ON "RateRequestLog_UK"("shopDomain");
 
 -- CreateIndex
-CREATE INDEX "RateRequestLog_createdAt_idx" ON "RateRequestLog"("createdAt");
+CREATE INDEX "RateRequestLog_createdAt_idx" ON "RateRequestLog_UK"("createdAt");
 
 -- CreateIndex
-CREATE INDEX "RateRequestLog_status_idx" ON "RateRequestLog"("status");
+CREATE INDEX "RateRequestLog_status_idx" ON "RateRequestLog_UK"("status");
 
 -- CreateIndex
-CREATE INDEX "ProductMapping_shopDomain_idx" ON "ProductMapping"("shopDomain");
+CREATE INDEX "ProductMapping_shopDomain_idx" ON "ProductMapping_UK"("shopDomain");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "ProductMapping_shopDomain_sku_key" ON "ProductMapping"("shopDomain", "sku");
+CREATE UNIQUE INDEX "ProductMapping_shopDomain_sku_key" ON "ProductMapping_UK"("shopDomain", "sku");
 
 -- CreateIndex
-CREATE INDEX "ProductSyncJob_shopDomain_idx" ON "ProductSyncJob"("shopDomain");
+CREATE INDEX "ProductSyncJob_shopDomain_idx" ON "ProductSyncJob_UK"("shopDomain");
 
 -- CreateIndex
-CREATE INDEX "ProductSyncJob_status_idx" ON "ProductSyncJob"("status");
+CREATE INDEX "ProductSyncJob_status_idx" ON "ProductSyncJob_UK"("status");
 
 -- CreateIndex
-CREATE INDEX "ProductSyncJob_createdAt_idx" ON "ProductSyncJob"("createdAt");
-
-
+CREATE INDEX "ProductSyncJob_createdAt_idx" ON "ProductSyncJob_UK"("createdAt");
