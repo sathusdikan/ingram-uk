@@ -85,6 +85,8 @@ model ProductMapping {
   @@unique([shopDomain, sku])
   @@index([shopDomain])
   @@schema("public")
+
+ 
 }
 
 model ProductSyncJob {
@@ -870,7 +872,7 @@ model error_logs {
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model final_product_table_us {
+model final_product_table_UK {
   total_availability   Int?
   price_part_nbr       String?
   price_vendor_name    String?
@@ -1548,7 +1550,7 @@ model shopify_products {
 }
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
-model shopify_products_final_us {
+model shopify_products_final_UK {
   id                   BigInt    @id(map: "shopify_products_permanent_today_duplicate9_pkey") @default(autoincrement())
   title                String?
   body_html            String?
